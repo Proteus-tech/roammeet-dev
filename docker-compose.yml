@@ -8,6 +8,7 @@ services:
     user: ${UID}
     volumes:
       - "../roammeet-people-service:/usr/src/people"
+      - "./mix/people:/home/pg1000/.mix"
     command: bash -c "cd /usr/src/people && mix deps.get && mix run --no-halt"
   roammeet-meetup-service:
     image: roammeet/elixir:latest
@@ -17,4 +18,5 @@ services:
     user: ${UID}
     volumes:
       - "../roammeet-meetup-service:/usr/src/meetup"
+      - "./mix/meetup:/home/pg1000/.mix"
     command: bash -c "cd /usr/src/meetup && mix deps.get && mix run --no-halt"
