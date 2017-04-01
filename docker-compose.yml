@@ -26,6 +26,8 @@ services:
   roammeet-postgres-service:
     image: postgres
     container_name: roammeet-postgres-service
+    networks:
+      - roammeet-network
     ports:
       - "3000:5432"
     environment:
