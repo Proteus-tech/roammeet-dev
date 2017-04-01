@@ -16,7 +16,20 @@ services:
     ports:
       - "8009:8009"
     user: ${UID}
+    external_links:
+      - roammeet-postgres-service:postgres
+    environment:
+      - DB_HOST=postgres
     volumes:
       - "../roammeet-meetup-service:/usr/src/meetup"
       - "./mix/meetup:/home/pg1000/.mix"
     command: bash -c "cd /usr/src/meetup && mix deps.get && mix run --no-halt"
+  roammeet-postgres-service:
+    image: postgres
+    container_name: roammeet-postgres-service
+    ports:
+      - "3000:5432"
+    environment:
+      - POSTGRES_PASSWORD=123456
+    volumes:
+      - "./postgresql/data:/var/lib/postgresql/data"
