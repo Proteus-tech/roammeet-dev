@@ -6,6 +6,8 @@ services:
     ports:
       - "8008:8008"
     user: ${UID}
+    networks:
+      - roammeet-network
     volumes:
       - "../roammeet-people-service:/usr/src/people"
       - "./mix/people:/home/pg1000/.mix"
