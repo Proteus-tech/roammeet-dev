@@ -1,2 +1,2 @@
 mix/
-postgresql/
+!postgresql/.gitkeep

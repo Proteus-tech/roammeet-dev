@@ -17,10 +17,8 @@ services:
     ports:
       - "8009:8009"
     user: ${UID}
-    external_links:
-      - roammeet-postgres-service:postgres
-    environment:
-      - DB_HOST=postgres
+    networks:
+      - roammeet-network
     volumes:
       - "../roammeet-meetup-service:/usr/src/meetup"
       - "./mix/meetup:/home/pg1000/.mix"
@@ -34,3 +32,12 @@ services:
       - POSTGRES_PASSWORD=123456
     volumes:
       - "./postgresql/data:/var/lib/postgresql/data"
+
+networks:
+  roammeet-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.16.237.0/24
+        gateway: 172.16.237.1
