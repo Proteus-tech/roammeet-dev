@@ -13,6 +13,11 @@ Pull:
 sh pull.sh
 ```
 
+Install mix local.hex:
+``` bash
+sh mix.sh
+```
+
 Run server:
 ``` bash
 sh run.sh
