@@ -17,6 +17,10 @@ Install mix local.hex:
 ``` bash
 sh mix.sh
 ```
+Run migrate:
+``` bash
+sh migrate.sh
+```
 
 Run server:
 ``` bash
