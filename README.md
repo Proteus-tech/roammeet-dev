@@ -32,3 +32,8 @@ Stop server:
 ``` bash
 sh stop.sh
 ```
+
+Migrate Model:
+``` bash
+sh migrate.sh
+```
