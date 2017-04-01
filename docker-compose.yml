@@ -6,10 +6,13 @@ services:
     ports:
       - "8008:8008"
     user: ${UID}
+    depends_on:
+      - roammeet-db
     volumes:
       - "../roammeet-people-service:/usr/src/people"
       - "./mix/people:/home/pg1000/.mix"
     command: bash -c "cd /usr/src/people && mix deps.get && mix run --no-halt"
+
   roammeet-meetup-service:
     image: roammeet/elixir:latest
     container_name: roammeet-meetup-service
