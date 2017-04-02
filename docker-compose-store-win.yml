@@ -1,0 +1,8 @@
+version: '2'
+services:
+  data:
+    image: alpine:latest
+    container_name: roammeet-data
+    volumes:
+        - /var/lib/postgresql/data
+    command: "true"

@@ -5,10 +5,13 @@ services:
     container_name: roammeet-people-service
     ports:
       - "8008:8008"
-    user: ${UID}
+    networks:
+      - roammeet-network
+    environment:
+      - MIX_HOME=/usr/src/.mix
     volumes:
-      - "../roammeet-people-service:/usr/src/people"
-      - "./mix/people:/home/pg501/.mix"
+      - "/c/Users/nisit/Documents/roammeet/roammeet-people-service:/usr/src/people"
+      - "/c/Users/nisit/Documents/roammeet/roammeet-dev/mix/people:/usr/src/.mix"
     command: bash -c "cd /usr/src/people && mix deps.get && mix run --no-halt"
 
   roammeet-meetup-service:
@@ -16,12 +19,13 @@ services:
     container_name: roammeet-meetup-service
     ports:
       - "8009:8009"
-    user: ${UID}
     networks:
       - roammeet-network
+    environment:
+      - MIX_HOME=/usr/src/.mix
     volumes:
-      - "../roammeet-meetup-service:/usr/src/meetup"
-      - "./mix/meetup:/home/pg501/.mix"
+      - "/c/Users/nisit/Documents/roammeet/roammeet-meetup-service:/usr/src/meetup"
+      - "/c/Users/nisit/Documents/roammeet/roammeet-dev/mix/meetup:/usr/src/.mix"
     command: bash -c "cd /usr/src/meetup && mix deps.get && mix run --no-halt"
   roammeet-postgres-service:
     image: postgres
@@ -32,8 +36,10 @@ services:
       - "3000:5432"
     environment:
       - POSTGRES_PASSWORD=123456
+    volumes_from:
+     - container:roammeet-data:rw
     volumes:
-      - "./postgresql/data:/var/lib/postgresql/data"
+      - "/c/Users/nisit/Documents/roammeet/roammeet-dev/sql-script:/var/lib/sql-script"
 
 networks:
   roammeet-network:
