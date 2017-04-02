@@ -56,3 +56,25 @@ sh stop.sh
 or
 bash stop.sh
 ```
+
+## API Documentation
+
+### meetup service
+
+get meetups:
+```
+http://127.0.0.1:8009/meetups/
+[GET] => [meetups]
+
+```
+
+insert meetup:
+```
+http://127.0.0.1:8009/meetups/
+[PUT] body	{
+		"name": "bankmagic",
+		"description": "bankmagic",
+		"start_date": "12/12/2020",
+		"start_time": "12:00"
+} => [meetup]
+```
