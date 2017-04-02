@@ -43,6 +43,13 @@ or
 bash migrate.sh
 ```
 
+Run create new migrate:
+``` bash
+sh new_migration.sh [service] [description]
+or
+bash migrate.sh
+```
+
 Run restart server:
 ``` bash
 sh restart.sh

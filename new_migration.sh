@@ -1,0 +1,1 @@
+docker-compose run --rm roammeet-$1-service sh -c "cd /usr/src/$1 && mix ecto.gen.migration $2"
