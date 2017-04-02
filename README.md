@@ -47,7 +47,7 @@ Run create new migrate:
 ``` bash
 sh new_migration.sh [service] [description]
 or
-bash migrate.sh
+bash migrate.sh [service] [description]
 ```
 
 Run restart server:
