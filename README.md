@@ -63,3 +63,53 @@ sh stop.sh
 or
 bash stop.sh
 ```
+
+## API Documentation
+
+### meetup service
+
+get meetups:
+```
+http://127.0.0.1:8009/meetups/
+[GET] => [meetups]
+```
+
+get meetup:
+```
+http://127.0.0.1:8009/meetup/<meetup id>
+[GET] => [meetup]
+```
+
+insert meetup:
+```
+http://127.0.0.1:8009/meetups/
+[PUT] body {
+		"name": "bankmagic",
+		"description": "bankmagic",
+		"start_date": "12/12/2020",
+		"start_time": "12:00"
+} => [meetup]
+```
+
+### people service
+
+get peoples:
+```
+http://127.0.0.1:8008/peoples
+[GET] => [peoples]
+```
+
+get people:
+```
+http://127.0.0.1:8008/people/<email of people>
+[GET] => [people]
+```
+
+insert people:
+```
+http://127.0.0.1:8009/peoples/
+[PUT] body {
+  "name": "bankmagic",
+  "email": "bankmagic2@email.com"
+} => [people]
+```
