@@ -21,18 +21,26 @@ sh mix.sh
 or
 bash mix.sh
 ```
-Run migrate:
-``` bash
-sh migrate.sh
-or
-bash migrate.sh
-```
 
 Run server:
 ``` bash
 sh run.sh
 or
 bash run.sh
+```
+
+Run resetdb:
+``` bash
+sh resetdb.sh
+or
+bash resetdb.sh
+```
+
+Run migrate:
+``` bash
+sh migrate.sh
+or
+bash migrate.sh
 ```
 
 Run restart server:
@@ -47,11 +55,4 @@ Stop server:
 sh stop.sh
 or
 bash stop.sh
-```
-
-Migrate Model:
-``` bash
-sh migrate.sh
-or
-bash migrate.sh
 ```
