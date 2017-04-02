@@ -11,33 +11,47 @@ docker pull postgres
 Pull:
 ``` bash
 sh pull.sh
+or
+bash pull.sh
 ```
 
 Install mix local.hex:
 ``` bash
 sh mix.sh
+or
+bash mix.sh
 ```
 Run migrate:
 ``` bash
 sh migrate.sh
+or
+bash migrate.sh
 ```
 
 Run server:
 ``` bash
 sh run.sh
+or
+bash run.sh
 ```
 
 Run restart server:
 ``` bash
 sh restart.sh
+or
+bash restart.sh
 ```
 
 Stop server:
 ``` bash
 sh stop.sh
+or
+bash stop.sh
 ```
 
 Migrate Model:
 ``` bash
 sh migrate.sh
+or
+bash migrate.sh
 ```

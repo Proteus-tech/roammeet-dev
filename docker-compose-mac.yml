@@ -6,13 +6,9 @@ services:
     ports:
       - "8008:8008"
     user: ${UID}
-    networks:
-      - roammeet-network
-    environment:
-      - MIX_HOME=/usr/src/.mix
     volumes:
       - "../roammeet-people-service:/usr/src/people"
-      - "./mix/people:/usr/src/.mix"
+      - "./mix/people:/home/pg501/.mix"
     command: bash -c "cd /usr/src/people && mix deps.get && mix run --no-halt"
 
   roammeet-meetup-service:
@@ -23,11 +19,9 @@ services:
     user: ${UID}
     networks:
       - roammeet-network
-    environment:
-      - MIX_HOME=/usr/src/.mix
     volumes:
       - "../roammeet-meetup-service:/usr/src/meetup"
-      - "./mix/meetup:/usr/src/.mix"
+      - "./mix/meetup:/home/pg501/.mix"
     command: bash -c "cd /usr/src/meetup && mix deps.get && mix run --no-halt"
   roammeet-postgres-service:
     image: postgres
