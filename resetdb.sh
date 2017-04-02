@@ -1,3 +1,4 @@
+export UID
 mkdir postgresql/data
 docker-compose stop roammeet-meetup-service
 docker-compose stop roammeet-people-service
