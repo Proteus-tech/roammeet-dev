@@ -105,7 +105,7 @@ http://127.0.0.1:8008/people/<email of people>
 [GET] => [people]
 ```
 
-insert peoples:
+insert people:
 ```
 http://127.0.0.1:8009/peoples/
 [PUT] body {
